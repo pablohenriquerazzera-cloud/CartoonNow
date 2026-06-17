@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CartoonNow</title>
+
+<style>
+body{
+    margin:0;
+    background:#111;
+    color:white;
+    font-family:Arial, sans-serif;
+}
+
+header{
+    background:#000;
+    padding:15px;
+    display:flex;
+    align-items:center;
+}
+
+.logo{
+    color:#ff4d4d;
+    font-size:32px;
+    font-weight:bold;
+}
+
+.banner{
+    height:400px;
+    background:url("banner.jpg") center/cover;
+    display:flex;
+    align-items:end;
+    padding:30px;
+}
+
+.banner h1{
+    font-size:48px;
+}
+
+.categoria{
+    padding:20px;
+}
+
+.videos{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.card{
+    width:220px;
+    background:#222;
+    border-radius:10px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+}
+
+.card img{
+    width:100%;
+    height:120px;
+    object-fit:cover;
+}
+
+.card h3{
+    padding:10px;
+}
+
+.player{
+    padding:20px;
+}
+
+video{
+    width:100%;
+    max-width:900px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <div class="logo">CartoonNow</div>
+</header>
+
+<section class="banner">
+    <h1>Assista desenhos clássicos grátis</h1>
+</section>
+
+<section class="categoria">
+    <h2>Populares</h2>
+
+```
+<div class="videos">
+
+    <div class="card" onclick="trocarVideo('video1.mp4')">
+        <img src="capa1.jpg">
+        <h3>Desenho 1</h3>
+    </div>
+
+    <div class="card" onclick="trocarVideo('video2.mp4')">
+        <img src="capa2.jpg">
+        <h3>Desenho 2</h3>
+    </div>
+
+</div>
+```
+
+</section>
+
+<section class="player">
+    <video id="player" controls>
+        <source src="video1.mp4" type="video/mp4">
+    </video>
+</section>
+
+<script>
+function trocarVideo(video){
+    const player = document.getElementById("player");
+    player.src = video;
+    player.load();
+    player.play();
+}
+</script>
+
+</body>
+</html>
